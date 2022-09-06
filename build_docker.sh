@@ -1,1 +1,1 @@
-docker build -t shiny-markdown . 
+docker build -t bit-writing . 
