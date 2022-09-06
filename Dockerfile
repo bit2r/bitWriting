@@ -1,10 +1,10 @@
 FROM joygram/bit-shiny:latest
 LABEL maintainer="joygram <joygram@gmail.com>"
-RUN apt-get install -y fonts-nanum*
-RUN addgroup --system app \
-	&& adduser --system --ingroup app app
+
 WORKDIR /home/app
 COPY app .
+
+RUN Rscript -e 'install.packages("curl")'
 
 RUN chown app:app -R /home/app
 USER app

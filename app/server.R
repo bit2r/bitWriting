@@ -1,6 +1,7 @@
 library(shiny)
 library(rmarkdown)
 library(markdown)
+library(showtext)
 
 font_add_google("Nanum Pen Script", family = "nanumpen")
 font_add_google("Noto Sans KR", family = "notosanskr")
@@ -22,7 +23,7 @@ shinyServer(function(input, output, session) {
                 output_format = pdf_document(
                     toc = TRUE,
                     latex_engine = "xelatex",
-                    pandoc_args = c("--variable", "mainfont=NanumGothic")
+                    pandoc_args = c("--variable", "mainfont=RIDIBatang")
                 ),
                 envir = new.env(parent = globalenv())
             )

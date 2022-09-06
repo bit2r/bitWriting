@@ -13,14 +13,22 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	fonts-nanum \
 	fonts-unfonts-extra \
 	&& rm -rf /var/lib/apt/lists/*
-#RUN install.r shiny
-#RUN echo "local(options(shiny.port = 9898, shiny.host = '0.0.0.0'))" > /usr/lib/R/etc/Rprofile.site
+
 RUN addgroup --system app \
 	&& adduser --system --ingroup app app
+
 WORKDIR /home/app
-COPY app .
+
+# add custom fonts
+RUN mkdir .fonts
+COPY fonts .fonts
+RUN fc-cache -rv
 
 RUN Rscript -e 'install.packages("shinyAce")'
 RUN Rscript -e 'install.packages("rmarkdown")'
 RUN Rscript -e 'install.packages("markdown")'
 RUN Rscript -e 'install.packages("ggplot2")'
+RUN Rscript -e 'install.packages("showtext")'
+RUN Rscript -e 'install.packages("curl")'
+
+

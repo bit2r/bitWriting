@@ -1,8 +1,8 @@
 library(shinyAce)
 library(rmarkdown)
 
-markdown_text <- "### Sample knitr Doc
-마크다운 문장이로 이루어진 것으로
+markdown_text <- "# 디지털 글쓰기
+마크다운 형식으로 글을 쓰며
 R코드를 실행할 수 있습니다.
 
 ```{r}
@@ -15,33 +15,33 @@ rnorm(5)
 ```{r}
 hist(rnorm(100))
 ```
+
+이것이 진정한
+
+`데이터과학` 디지털 글쓰기 입니다.
 "
 
 
 ui <- fluidPage(
     sidebarLayout(
         sidebarPanel(
-            width = 3,
-            h2("study"),
-            a(h4("writing"),
-                href = "#rmarkdown"
-            ),
-            hr(),
+            width = 2,
+            h2("BitWriting"),
         ),
         mainPanel(
-            width = 9,
+            width = 10,
             h2("Markdown Editor"),
             hr(),
             column(
                 6,
-                h2("Source R-Markdown"),
+                h2("R-Markdown Editor"),
                 aceEditor("rmd", mode = "rmarkdown", value = markdown_text),
                 actionButton("eval", "Update"),
                 downloadButton("report", "보고서")
             ),
             column(
                 6,
-                h2("Knitted Output"),
+                h2("미리 보기"),
                 htmlOutput("knitDoc")
             )
         )

@@ -5,7 +5,7 @@ install.packages("shinyAce")
 install.packages("rmarkdown")
 install.packages('markdown')
 install.packages('formatR')
-install.packages('knitr')
+install.packages('showtext')
 
 
 > library(shiny)
