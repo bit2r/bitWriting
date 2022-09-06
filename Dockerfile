@@ -8,10 +8,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	libssl-dev \
 	libssh2-1-dev \
 	pandoc \
-	texlive-latex-base \
-	texlive-fonts-recommended \
-	texlive-fonts-extra \
-	texlive-latex-extra \
+	texlive-full \
+	fonts-lmodern \
+	fonts-nanum \
+	fonts-unfonts-extra \
 	&& rm -rf /var/lib/apt/lists/*
 #RUN install.r shiny
 #RUN echo "local(options(shiny.port = 9898, shiny.host = '0.0.0.0'))" > /usr/lib/R/etc/Rprofile.site

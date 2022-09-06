@@ -15,6 +15,8 @@ shinyServer(function(input, output, session) {
             cat(input$rmd, file = tmp_file)
             rmarkdown::render(tmp_file,
                 output_file = file,
+                # 				output_format = pdf_document(toc=TRUE, latex_engine = 'xelatex',
+                #                       pandoc_args = c("--variable", "mainfont='NanumGothic'"),
                 envir = new.env(parent = globalenv())
             )
         }

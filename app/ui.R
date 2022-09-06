@@ -1,17 +1,22 @@
 library(shinyAce)
 library(rmarkdown)
 
-init <- "### Sample knitr Doc
-
-This is some markdown text. It may also have embedded R code
-which will be executed.
+init <- "---
+output:
+  pdf_document:
+    latex_engine: xelatex
+mainfont: NanumGothic
+---
+### Sample knitr Doc
+마크다운 문장이로 이루어진 것으로
+R코드를 실행할 수 있습니다.
 
 ```{r}
 2*3
 rnorm(5)
 ```
 
-It can even include graphical elements.
+그래픽 요소를 포함 할 수 도 있습니다.
 
 ```{r}
 hist(rnorm(100))
