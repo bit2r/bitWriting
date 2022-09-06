@@ -25,13 +25,9 @@ ui <- fluidPage(
             width = 3,
             h2("study"),
             a(h4("writing"),
-                href = "#birds"
+                href = "#rmarkdown"
             ),
             hr(),
-            a(h4("study"),
-                href = "https://en.wikipedia.org/wiki/Main_Page",
-                target = "blank"
-            )
         ),
         mainPanel(
             width = 9,
@@ -41,7 +37,8 @@ ui <- fluidPage(
                 6,
                 h2("Source R-Markdown"),
                 aceEditor("rmd", mode = "rmarkdown", value = init),
-                actionButton("eval", "Update")
+                actionButton("eval", "Update"),
+                downloadButton("report", "보고서")
             ),
             column(
                 6,
