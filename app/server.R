@@ -2,6 +2,10 @@ library(shiny)
 library(rmarkdown)
 library(markdown)
 
+font_add_google("Nanum Pen Script", family = "nanumpen")
+font_add_google("Noto Sans KR", family = "notosanskr")
+
+
 shinyServer(function(input, output, session) {
     output$knitDoc <- renderUI({
         input$eval
@@ -15,8 +19,11 @@ shinyServer(function(input, output, session) {
             cat(input$rmd, file = tmp_file)
             rmarkdown::render(tmp_file,
                 output_file = file,
-                # 				output_format = pdf_document(toc=TRUE, latex_engine = 'xelatex',
-                #                       pandoc_args = c("--variable", "mainfont='NanumGothic'"),
+                output_format = pdf_document(
+                    toc = TRUE,
+                    latex_engine = "xelatex",
+                    pandoc_args = c("--variable", "mainfont=NanumGothic")
+                ),
                 envir = new.env(parent = globalenv())
             )
         }

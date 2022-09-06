@@ -1,13 +1,7 @@
 library(shinyAce)
 library(rmarkdown)
 
-init <- "---
-output:
-  pdf_document:
-    latex_engine: xelatex
-mainfont: NanumGothic
----
-### Sample knitr Doc
+markdown_text <- "### Sample knitr Doc
 마크다운 문장이로 이루어진 것으로
 R코드를 실행할 수 있습니다.
 
@@ -41,7 +35,7 @@ ui <- fluidPage(
             column(
                 6,
                 h2("Source R-Markdown"),
-                aceEditor("rmd", mode = "rmarkdown", value = init),
+                aceEditor("rmd", mode = "rmarkdown", value = markdown_text),
                 actionButton("eval", "Update"),
                 downloadButton("report", "보고서")
             ),
