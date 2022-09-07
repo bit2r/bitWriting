@@ -1,0 +1,1 @@
+docker build -t joygram/bit-writing .. -f ../docker_local/Dockerfile 
