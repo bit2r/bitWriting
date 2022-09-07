@@ -1,3 +1,6 @@
+# shinyAce를 사용하기 위한 추가 라이브러리와 latex패키지를 보강한 기반입니다.
+# 기본 구성이라 추가적으로 변경 이슈는 없을 것 입니다. 
+# by joygram 2022/09/07
 FROM rocker/shiny:latest
 LABEL maintainer="joygram <joygram@gmail.com>"
 RUN apt-get update && apt-get install -y --no-install-recommends \
