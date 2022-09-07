@@ -1,1 +1,1 @@
-docker build -t joygram/bit-shiny . 
+docker build -t r2bit/bit-shiny . 
