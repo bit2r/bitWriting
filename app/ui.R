@@ -35,7 +35,12 @@ ui <- fluidPage(
             column(
                 6,
                 h2("R-Markdown Editor"),
-                aceEditor("rmd", mode = "rmarkdown", value = markdown_text),
+                aceEditor("rmd",
+                    mode = "rmarkdown",
+                    tabSize = 4,
+                    useSoftTabs = TRUE,
+                    value = markdown_text
+                ),
                 actionButton("eval", "Update"),
                 downloadButton("report", "보고서")
             ),

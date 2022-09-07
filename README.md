@@ -1,16 +1,23 @@
 # bitWriting
 
-```
-install.packages("shinyAce")
-install.packages("rmarkdown")
-install.packages('markdown')
-install.packages('formatR')
-install.packages('showtext')
+ ## 도커 
+
+기반 docker 이미지 생성과 실제 웹앱을 생성 배포할 수 있는 두가지 도커를 만들었습니다. 
+
+### docker_bit-shiny 
+
+`shinyAce`와 `보고서` 출력을 생성할 수 있는 기본 패키지 및 `latex`및 폰트를 설치하여 
+
+shinyAce를 기반 개발을 할 수 있는 기본 환경입니다. 
+
+기본 이미지라 자주 갱신할 일은 없습니다.  
+
+### docker_bit-writing 
+
+실제 개발한 웹앱을 이미지하고 배포하는 도커 입니다. 
+
+현재는 app아래 있는 것을 이미지로 생성하고 배포하도록 구성되어 있습니다. 
 
 
-> library(shiny)
-> library(shinyAce)
-> library(rmarkdown)
-> library(markdown)
-> runApp(".")
-```
+
+##

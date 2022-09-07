@@ -22,7 +22,7 @@ RUN addgroup --system app \
 
 WORKDIR /home/app
 
-# add custom fonts
+# add custom fonts an register
 RUN mkdir .fonts
 COPY fonts .fonts
 RUN fc-cache -rv
