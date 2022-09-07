@@ -50,6 +50,18 @@ run_docker.[cmd,sh] : 배포된 이미지를 다운받고 실행합니다.
  run_docker.[cmd,sh] : 로컬 도커를 실행합니다. 
 ```
 
-## app
+## 워크플로우
 
-shinyAce에디터와 R-markdown 그리고 한글 보고서를 작성할 수 있도록 기반을 정리하였습니다.
+ `bitWriting` 프로젝트를 `docker hub`의 `private`에 배포하고 
+
+`http://r2bit.ddns.net:3838`서버에 반영하는 과정을 설명합니다. 
+
+`bitWriting`의 변경된 컨텐츠를 서버에 반영하기 위해서 `run_docker_remote.[cmd,sh]`를 실행합니다. 
+
+### 사전 지식
+
+- `r2bit` 계정의 비밀번호는 도커허브의 비밀번호와 동일하게 지정하였습니다. 
+
+- private 도커 허브 저장소에 push하기위해서 r2bit 비밀번호를 요구합니다. 
+- `docker_bit-writing/run_docker_remote.[cmd,sh]`는 이미지를 굽고 도커허브에 배포한 후 원격서버의 도커서버를 새롭게 시작하는 과정을 모두 수행합니다. 
+
