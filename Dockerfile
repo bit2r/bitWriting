@@ -4,7 +4,6 @@ LABEL maintainer="joygram <joygram@gmail.com>"
 WORKDIR /home/app
 COPY app .
 
-RUN Rscript -e 'install.packages("curl")'
 
 RUN chown app:app -R /home/app
 USER app
