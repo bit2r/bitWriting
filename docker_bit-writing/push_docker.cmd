@@ -1,2 +1,4 @@
-docker login -u joygram 
-docker push joygram/bit-writing
+@echo off
+echo === push docker === 
+docker login -u r2bit 
+docker push r2bit/bit-writing
