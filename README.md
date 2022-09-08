@@ -63,5 +63,16 @@ run_docker.[cmd,sh] : 배포된 이미지를 다운받고 실행합니다.
 - `r2bit` 계정의 비밀번호는 도커허브의 비밀번호와 동일하게 지정하였습니다. 
 
 - private 도커 허브 저장소에 push하기위해서 r2bit 비밀번호를 요구합니다. 
-- `docker_bit-writing/run_docker_remote.[cmd,sh]`는 이미지를 굽고 도커허브에 배포한 후 원격서버의 도커서버를 새롭게 시작하는 과정을 모두 수행합니다. 
+
+### 이미지 생성 및 배포 과정 
+
+1. `build_docker.[cmd,sh]` : 업데이트 된 내용을 반영한 이미지를 생성합니다.
+2. `push_docker.[cmd,sh]` : 도커 허브 프라이빗 저장소에 배포합니다.
+3. `run_docker_remote.[cmd,sh]` : 도커이미지를 원격서버에 반영후 재시작 합니다. 
+
+
+
+`docker_bit-writing/deploy.[cmd,sh]`는 이미지를 굽고 도커허브에 배포한 후 원격서버의 도커서버를 새롭게 시작하는 과정을 모두 수행합니다.
+
+ 
 
