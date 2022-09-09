@@ -35,9 +35,8 @@ run_docker.[cmd,sh] : 배포된 이미지를 다운받고 실행합니다.
 
 현재는 app아래 있는 것을 이미지로 생성하고 배포하도록 구성되어 있습니다.
 
-현재는 `joygram` 계정에 private 저장소에 등록하도록 하였으나
+`r2bit` 계정에 private 저장소에 등록하도록 하였습니다
 
-후에 별도 계정을 docker hub에 생성후 변경하면 되도록 하였습니다.
 
 ### docker_local
 
@@ -70,6 +69,17 @@ run_docker.[cmd,sh] : 배포된 이미지를 다운받고 실행합니다.
 2. `push_docker.[cmd,sh]` : 도커 허브 프라이빗 저장소에 배포합니다.
 3. `run_docker_remote.[cmd,sh]` : 도커이미지를 원격서버에 반영후 재시작 합니다. 
 
+```mermaid
+stateDiagram-v2
+    [*] --> bit_shiny_docker
+    bit_shiny_docker --> dockerHub : build_push
+    bit_shiny_docker --> bit_writing_docker : build
+    bit_writing_docker --> dockerHub : push
+    dockerHub --> bit_writing_docker : run
+    dockerHub --> r2bit_server : run_remote
+    bitWritingApp --> bit_writing_docker : build
+            
+```
 
 
 `docker_bit-writing/deploy.[cmd,sh]`는 이미지를 굽고 도커허브에 배포한 후 원격서버의 도커서버를 새롭게 시작하는 과정을 모두 수행합니다.
