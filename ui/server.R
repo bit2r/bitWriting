@@ -15,26 +15,55 @@ shinyServer(function(input, output, session) {
   # *. Rmd 파일 선택하여 텍스트 보여주기
   file_contents <- reactive(
 
-    if(input$curriculum == "확률통계") {
+    if (input$curriculum == "확률통계") {
       file_content <- readLines("www/stat.Rmd")
+    } else if(input$curriculum == "수학") {
+      file_content <- readLines("www/math.Rmd")
+    } else if(input$curriculum == "국어"){
+      file_content <- readLines("www/korean.Rmd")
     } else {
-      file_content <- readLines("www/test.Rmd")
+      file_contents <- ""
     }
   )
 
-  output$file_content_output <- renderUI({
-      HTML(
-        paste(
-          c("<pre>", file_contents(), "</pre>"),
-          collapse = "<br>"
-        )
-      )
+  observe({
+    if(input$curriculum == "확률통계"){
+      updateAceEditor(session, "rmd",
+                      mode = "rmarkdown",
+                      tabSize = 4,
+                      useSoftTabs = TRUE,
+                      value = paste(file_contents(), collapse= "\n") )
+    } else if(input$curriculum == "수학"){
+        updateAceEditor(session, "rmd",
+                        mode = "rmarkdown",
+                        tabSize = 4,
+                        useSoftTabs = TRUE,
+                        value = paste(file_contents(), collapse= "\n") )
+    } else if(input$curriculum == "국어"){
+        updateAceEditor(session, "rmd",
+                        mode = "rmarkdown",
+                        tabSize = 4,
+                        useSoftTabs = TRUE,
+                        value = paste(file_contents(), collapse= "\n") )
+    }
   })
+
+  # output$file_content_output <- renderUI({
+  #   HTML(
+  #     paste(
+  #       c("<pre>", file_contents(), "</pre>"),
+  #       collapse = "<br>"
+  #     )
+  #   )
+  # })
+
+
 
   # *. Rmd 편집기
   output$knitDoc <- renderUI({
     input$eval
-    HTML(knitr::knit2html(text = isolate(input$rmd), fragment.only = TRUE, quiet = TRUE)) # nolint
+    HTML(knitr::knit2html(text = isolate(input$rmd),
+                          fragment.only = TRUE, quiet = TRUE)) # nolint
   })
 
   # *. PDF 파일 생성

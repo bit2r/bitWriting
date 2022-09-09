@@ -7,7 +7,7 @@ library(shinyjs)
 # 마크다운 콘텐츠 변환
 # https://stackoverflow.com/questions/56860382/r-shinyace-non-reactive-checkboxinput
 
-markdown_text <- readLines("www/stat.Rmd")
+markdown_text <- ""
 
 ui <- shinyUI(
   fluidPage(
@@ -26,25 +26,22 @@ ui <- shinyUI(
         h3("교과목"),
         selectInput("curriculum",
                     "글쓰기 분야",
-                    choices = c("확률통계", "수학", "국어", "과학"))
+                    choices = c("선택하세요!",  "확률통계", "수학", "국어"))
 
       ),
       mainPanel(
-        width = 10,
-        h2("Markdown Editor"),
-        hr(),
         column(
           6,
           h2("R-Markdown Editor"),
-          aceEditor("rmd",
+          aceEditor(outputId = "rmd",
                     mode = "rmarkdown",
                     tabSize = 4,
                     useSoftTabs = TRUE,
                     value = markdown_text
           ),
           actionButton("eval", "Update"),
-          downloadButton("report", "보고서"),
-          uiOutput("file_content_output")
+          downloadButton("report", "보고서")
+          # uiOutput("file_content_output")
         ),
         column(
           6,
