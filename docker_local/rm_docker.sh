@@ -2,4 +2,4 @@
 docker stop $(docker ps -q --filter ancestor=r2bit/bit-writing)
 docker stop $(docker ps -q --filter ancestor=bit-writing)
 
-docker image rm r2bit/bit-writing 
+docker image rm bit-writing 
