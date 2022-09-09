@@ -1,0 +1,77 @@
+/*-- scss:defaults --*/
+
+// Color system
+
+// scss-docs-start gray-color-variables
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+
+// 글꼴 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+@font-face {
+    font-family: 'MaruBuri-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'D2Coding';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+// scss-docs-start font-variables
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: "Noto Sans KR", 'Nanum Myeongjo',  !default;
+// $font-family-serif: 'MaruBuri-Regular', "Noto Serif KR", !default;
+$font-family-monospace:  'D2Coding', "Courier New", monospace !default;
+
+// scss-docs-start headings-variables
+$headings-font-family:  $font-family-sans-serif !default;
+
+
+/*-- scss:rules --*/
+
+.navbar-dark {
+    background-color:$gray-600;
+    color: #000000;
+    font-family: 'MaruBuri-Regular';
+}
+
+.sidebar-item {
+    margin-bottom: 0.2em;
+    font-family: 'Noto Serif KR';
+}
+
+h1, .h1, h2, .h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Noto Sans KR';
+}
+
+p {
+    font-family: 'MaruBuri-Regular', serif;
+}
+
+
+
