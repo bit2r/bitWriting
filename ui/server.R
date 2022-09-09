@@ -2,6 +2,7 @@ library(shiny)
 library(rmarkdown)
 library(markdown)
 library(showtext)
+library(dplyr)
 
 # 구글 폰트를 showtext를 이용하여 바로 적용할 수 도 있습니다.
 # 네트워크 상태에 따라 다운로드가 안되는 경우도 있습니다.
@@ -10,11 +11,33 @@ library(showtext)
 
 
 shinyServer(function(input, output, session) {
+
+  # *. Rmd 파일 선택하여 텍스트 보여주기
+  file_contents <- reactive(
+
+    if(input$curriculum == "확률통계") {
+      file_content <- readLines("www/stat.Rmd")
+    } else {
+      file_content <- readLines("www/test.Rmd")
+    }
+  )
+
+  output$file_content_output <- renderUI({
+      HTML(
+        paste(
+          c("<pre>", file_contents(), "</pre>"),
+          collapse = "<br>"
+        )
+      )
+  })
+
+  # *. Rmd 편집기
   output$knitDoc <- renderUI({
     input$eval
     HTML(knitr::knit2html(text = isolate(input$rmd), fragment.only = TRUE, quiet = TRUE)) # nolint
   })
 
+  # *. PDF 파일 생성
   output$report <- downloadHandler(
     filename = "report.pdf",
     content = function(file) {

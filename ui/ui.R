@@ -2,11 +2,13 @@ library(shiny)
 library(gridlayout)
 library(shinyAce)
 library(rmarkdown)
+library(shinyjs)
 
-markdown_text <- readLines("www/test.md")
+markdown_text <- readLines("www/stat.Rmd")
 
 ui <- shinyUI(
   fluidPage(
+    shinyjs::useShinyjs(),
     includeCSS("www/writing.css"),
     titlePanel(
       fluidRow(
@@ -26,9 +28,11 @@ ui <- shinyUI(
       ),
       mainPanel(
         width = 10,
+        h2("Markdown Editor"),
+        hr(),
         column(
           6,
-          h2("글쓰기 편집기"),
+          h2("R-Markdown Editor"),
           aceEditor("rmd",
                     mode = "rmarkdown",
                     tabSize = 4,
@@ -36,7 +40,8 @@ ui <- shinyUI(
                     value = markdown_text
           ),
           actionButton("eval", "Update"),
-          downloadButton("report", "보고서")
+          downloadButton("report", "보고서"),
+          uiOutput("file_content_output")
         ),
         column(
           6,
