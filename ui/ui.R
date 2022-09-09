@@ -4,6 +4,9 @@ library(shinyAce)
 library(rmarkdown)
 library(shinyjs)
 
+# 마크다운 콘텐츠 변환
+# https://stackoverflow.com/questions/56860382/r-shinyace-non-reactive-checkboxinput
+
 markdown_text <- readLines("www/stat.Rmd")
 
 ui <- shinyUI(
