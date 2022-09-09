@@ -28,10 +28,19 @@ COPY fonts .fonts
 RUN fc-cache -rv
 
 RUN Rscript -e 'install.packages("shinyAce")'
+RUN Rscript -e 'install.packages("shinyjs")'
+
 RUN Rscript -e 'install.packages("rmarkdown")'
 RUN Rscript -e 'install.packages("markdown")'
 RUN Rscript -e 'install.packages("ggplot2")'
 RUN Rscript -e 'install.packages("showtext")'
 RUN Rscript -e 'install.packages("curl")'
+# add additional  package by joygram 2022/09/09
+RUN Rscript -e 'install.packages("devtools")'
+RUN Rscript -e 'devtools::install_github("rstudio/gridlayout")'
+RUN Rscript -e 'install.packages("sass")'
+RUN Rscript -e 'install.packages("here")'
+RUN Rscript -e 'install.packages("dplyr")'
+
 
 
