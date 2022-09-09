@@ -35,9 +35,8 @@ run_docker.[cmd,sh] : 배포된 이미지를 다운받고 실행합니다.
 
 현재는 app아래 있는 것을 이미지로 생성하고 배포하도록 구성되어 있습니다.
 
-현재는 `joygram` 계정에 private 저장소에 등록하도록 하였으나
+`r2bit` 계정에 private 저장소에 등록하도록 하였습니다
 
-후에 별도 계정을 docker hub에 생성후 변경하면 되도록 하였습니다.
 
 ### docker_local
 
