@@ -7,15 +7,18 @@ library(gridlayout)
 library(shinyAce)
 library(rmarkdown)
 library(shinyjs)
+library(markdown)
+library(dplyr)
 library(sass)
+
 
 ################################################
 ## *. CSS
 ################################################
 
 sass(
-  sass_file(glue::glue("{here::here()}/ui/www/quarto.scss")),
-  output = glue::glue("{here::here()}/ui/www/quarto.css")
+    sass_file(glue::glue("{here::here()}/ui/www/quarto.scss")),
+    output = glue::glue("{here::here()}/ui/www/quarto.css")
 )
 
 ################################################
