@@ -56,5 +56,5 @@ ui <- shinyUI(
             class = "footer",
             includeHTML("www/footer.html")
         )
-    )
+    ) # fluidPage
 )

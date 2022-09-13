@@ -41,6 +41,9 @@ RUN Rscript -e 'devtools::install_github("rstudio/gridlayout")'
 RUN Rscript -e 'install.packages("sass")'
 RUN Rscript -e 'install.packages("here")'
 RUN Rscript -e 'install.packages("dplyr")'
+# add bootstraplib package by joygram 2022/09/13 
+RUN Rscript -e 'devtools::install_github("rstudio/bootstraplib")'
+
 
 
 
