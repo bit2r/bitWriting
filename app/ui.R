@@ -8,6 +8,7 @@ mark_editor <- aceEditor(
     mode = "rmarkdown",
     tabSize = 4,
     autoComplete = "live",
+    autoCompleters = "keyword",
     useSoftTabs = TRUE,
     value = markdown_text
 )
