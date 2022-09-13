@@ -10,7 +10,7 @@ library(shinyjs)
 library(markdown)
 library(dplyr)
 library(sass)
-library(bootstraplib)
+# library(bootstraplib)
 
 ################################################
 ## *. CSS
