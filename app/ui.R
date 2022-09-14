@@ -44,6 +44,7 @@ ui <- shinyUI(
                     downloadButton("report", "보고서"),
                     # uiOutput("file_content_output")
                     # actionButton("eval", "Update"),
+                    # actionButton("hide", "감추기"),
                     mark_editor
                 ),
                 column(
