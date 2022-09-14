@@ -1,1 +1,1 @@
-docker build -t bit-writing .. -f ../docker_local/Dockerfile 
+docker build -t bit-writing-local .. -f ../docker_local/Dockerfile 

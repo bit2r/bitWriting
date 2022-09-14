@@ -41,10 +41,10 @@ ui <- shinyUI(
                 column(
                     6,
                     h2("R-Markdown Editor"),
-                    mark_editor,
-                    # actionButton("eval", "Update"),
-                    downloadButton("report", "보고서")
+                    downloadButton("report", "보고서"),
                     # uiOutput("file_content_output")
+                    # actionButton("eval", "Update"),
+                    mark_editor
                 ),
                 column(
                     6,
