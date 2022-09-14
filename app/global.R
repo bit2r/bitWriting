@@ -17,8 +17,8 @@ library(sass)
 ################################################
 
 sass(
-    sass_file(glue::glue("{here::here()}/ui/www/quarto.scss")),
-    output = glue::glue("{here::here()}/ui/www/quarto.css")
+    sass_file(glue::glue("{here::here()}/www/quarto.scss")),
+    output = glue::glue("{here::here()}/www/quarto.css")
 )
 
 ################################################
