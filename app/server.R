@@ -99,5 +99,5 @@ shinyServer(function(input, output, session) {
                 envir = new.env(parent = globalenv())
             )
         }
-    )
+    ) # downloadHandler
 })

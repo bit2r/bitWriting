@@ -44,6 +44,13 @@ RUN Rscript -e 'install.packages("dplyr")'
 # add bootstraplib package by joygram 2022/09/13 
 RUN Rscript -e 'devtools::install_github("rstudio/bootstraplib")'
 
+# add additional library by joygram 2022/09/15
+RUN Rscript -e 'devtools::install_github("rstudio/learnr")'
+RUN Rscript -e 'install.packages("reticulate")'
+
+
+
+
 
 
 
