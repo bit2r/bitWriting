@@ -11,6 +11,7 @@ else
 	sudo -u shiny git pull 
 fi
 
+cp /home/app/shiny-server.conf /etc/shiny-server/shiny-server.conf
 sudo -u shiny R -f /home/app/install_packages.R
 
 /init 
