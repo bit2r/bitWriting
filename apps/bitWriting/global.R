@@ -1,15 +1,28 @@
 ################################################
 ## *. 패키지
 ################################################
+# attach packages to the search path, installing them from CRAN or GitHub if needed
+librarian::shelf(
+    shiny,
+    gridlayout,
+    shinyAce,
+    shinyjs,
+    rmarkdown,
+    markdown,
+    dplyr,
+    sass
+)
+# devtools::install_github("rstudio/gridlayout")
+# devtools::install_github("rstudio/learnr")
 
-library(shiny)
-library(gridlayout)
-library(shinyAce)
-library(rmarkdown)
-library(shinyjs)
-library(markdown)
-library(dplyr)
-library(sass)
+# library(shiny)
+# library(gridlayout)
+# library(shinyAce)
+# library(rmarkdown)
+# library(shinyjs)
+# library(markdown)
+# library(dplyr)
+# library(sass)
 # library(bootstraplib)
 
 ################################################

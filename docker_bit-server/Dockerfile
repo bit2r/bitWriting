@@ -9,13 +9,16 @@ RUN adduser --system --ingroup app app
 
 COPY assets/shiny-server.conf /etc/shiny-server/shiny-server.conf
 COPY assets/update.sh /home/app/update.sh
+COPY assets/install_packages.R /home/app/install_packages.R
 
+# install required packages 
+RUN R -f /home/app/install_packages.R 
 
 WORKDIR /home/app
 # copy shiny-server config site: /home/app/shiny-server/apps
 RUN chown app:app -R /home/app
 USER app
 
+
 ## 패치 및 설정 반영 
 CMD ["bash", "/home/app/update.sh"]
-# CMD ["R", "-e", "library(shiny);library(shinyAce);library(markdown);library(rmarkdown);shiny::runApp('/home/app', host = '0.0.0.0', port = 3838)"]
