@@ -11,11 +11,5 @@ else
 	sudo -u shiny git pull 
 fi
 
-sudo su 
-# update config 
-cp /home/app/shiny-server/docker_bit-server/assets/shiny-server.conf /etc/shiny-server/shiny-server.conf
-
-# update r-packages 
-R -f /home/app/install_packages.R
-
-/init 
+cd /home/app/shiny-server/docker_bit-server
+source ./run_server.sh
