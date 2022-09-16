@@ -4,13 +4,14 @@
 # attach packages to the search path, installing them from CRAN or GitHub if needed
 librarian::shelf(
     shiny,
-    gridlayout,
+    rstudio / gridlayout,
     shinyAce,
     shinyjs,
     rmarkdown,
     markdown,
     dplyr,
-    sass
+    sass,
+    rstudio / learnr
 )
 # devtools::install_github("rstudio/gridlayout")
 # devtools::install_github("rstudio/learnr")
