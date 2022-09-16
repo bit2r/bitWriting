@@ -11,5 +11,5 @@ else
 	sudo -u shiny git pull 
 fi
 
-cd /home/app/shiny-server/docker_bit-server
+cd /home/app/shiny-server/docker_bit-server/assets
 source ./run_server.sh
