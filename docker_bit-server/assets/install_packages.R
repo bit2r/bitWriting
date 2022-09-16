@@ -1,6 +1,9 @@
 
 install.packages("devtools")
-install.packages("librarian")
+devtools::install_github("DesiQuintans/librarian")
+devtools::install_github("rstudio/gridlayout")
+devtools::install_github("rstudio/learnr")
+
 install.packages("shinyAce")
 install.packages("shinyjs")
 install.packages("rmarkdown")
@@ -12,7 +15,4 @@ install.packages("sass")
 # install.packages("dplyr")
 install.packages("reticulate")
 
-# devtools::install_github("DesiQuintans/librarian")
-# devtools::install_github("rstudio/gridlayout")
 # devtools::install_github("rstudio/bootstraplib")
-# devtools::install_github("rstudio/learnr")

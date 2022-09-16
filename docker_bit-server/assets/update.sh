@@ -3,12 +3,12 @@
 
 if [ ! -d shiny-server ]; then
 	echo git clone 
-	git clone https://github.com/bit2r/bitWriting.git /home/app/shiny-server
+	sudo -u shiny git clone https://github.com/bit2r/bitWriting.git /home/app/shiny-server
 else 
 	echo git update 
 	cd /home/app/shiny-server
-	git reset --hard
-	git pull 
+	sudo -u shiny git reset --hard
+	sudo -u shiny git pull 
 fi
 
-/init 
+sudo -u shiny /init 
