@@ -10,9 +10,10 @@ RUN apt-get install -y \
 	fonts-unfonts-extra 
 
 COPY assets/shiny-server.conf /etc/shiny-server/shiny-server.conf
-COPY assets/update.sh /home/app/update.sh
-COPY assets/install_packages.R /home/app/install_packages.R
-COPY assets/install_packages.sh /home/app/install_packages.sh
+COPY assets/ /home/app/
+#COPY assets/update.sh /home/app/update.sh
+#COPY assets/install_packages.R /home/app/install_packages.R
+#COPY assets/install_packages.sh /home/app/install_packages.sh
 
 # install required packages 
 RUN R -f /home/app/install_packages.R 
