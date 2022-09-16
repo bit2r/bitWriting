@@ -10,9 +10,7 @@ librarian::shelf(
     markdown,
     dplyr,
     sass,
-    rstudio / learnr,
-    rstudio / gridlayout,
-    also_depends = TRUE
+    rstudio / learnr
 )
 # devtools::install_github("rstudio/gridlayout")
 # devtools::install_github("rstudio/learnr")
