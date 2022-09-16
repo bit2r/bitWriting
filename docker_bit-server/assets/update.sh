@@ -12,7 +12,7 @@ else
 fi
 
 # update config 
-cp /home/app/shiny-server.conf /etc/shiny-server/shiny-server.conf
+cp /home/app/shiny-server/docker_bit-server/assets/shiny-server.conf /etc/shiny-server/shiny-server.conf
 
 # update r-packages 
 sudo -u shiny R -f /home/app/install_packages.R
