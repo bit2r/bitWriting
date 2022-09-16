@@ -12,9 +12,11 @@ COPY assets/install_packages.R /home/app/install_packages.R
 RUN R -f /home/app/install_packages.R 
 
 WORKDIR /home/app
+
 # copy shiny-server config site: /home/app/shiny-server/apps
 RUN chown shiny:shiny -R /home/app
-USER shiny
+
+# USER shiny
 
 
 ## 패치 및 설정 반영 

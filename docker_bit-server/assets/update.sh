@@ -11,4 +11,6 @@ else
 	sudo -u shiny git pull 
 fi
 
-sudo -u shiny /init 
+sudo -u shiny R -f /home/app/install_packages.R
+
+/init 
