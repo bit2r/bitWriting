@@ -1,5 +1,5 @@
 #!/usr/bin/bash
 
-cd /home/app/shiny-server/docker_bit-server/assets
+cd /home/shiny/shiny-server/docker_bit-server/scripts
 source ./update_repository.sh
 source ./run_server.sh

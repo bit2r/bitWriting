@@ -9,25 +9,25 @@ RUN apt-get install -y \
 	fonts-nanum \
 	fonts-unfonts-extra 
 
-COPY assets/shiny-server.conf /etc/shiny-server/shiny-server.conf
-COPY assets/ /home/app/
-#COPY assets/update.sh /home/app/update.sh
-#COPY assets/install_packages.R /home/app/install_packages.R
-#COPY assets/install_packages.sh /home/app/install_packages.sh
+#COPY scripts/shiny-server.conf /etc/shiny-server/shiny-server.conf
+
+WORKDIR /home/shiny-server
+COPY install_scripts ./install_scripts
+COPY scripts/ ./scripts
 
 # install required packages 
-RUN R -f /home/app/install_packages.R 
-
+RUN R -f install_scripts/install_packages.R 
 # install shinylive, quarto, etc.
-RUN /home/app/install_packages.sh
+RUN install_scripts/install_packages.sh
 
-WORKDIR /home/app
+RUN install_scripts/install_repository.sh
+
 
 # copy shiny-server config site: /home/app/shiny-server/apps
-RUN chown shiny:shiny -R /home/app
+RUN chown shiny:shiny -R /home/shiny-server
 
 # USER shiny
 
 
 ## 패치 및 설정 반영 
-CMD ["bash", "/home/app/update.sh"]
+CMD ["bash", "/home/shiny-server/scripts/update.sh"]
