@@ -1,6 +1,5 @@
 #!/usr/bin/bash
 
-sudo su 
 # update config 
 cp ./shiny-server.conf /etc/shiny-server/shiny-server.conf
 
