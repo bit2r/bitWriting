@@ -10,8 +10,7 @@ RUN apt-get install -y \
 	fonts-unfonts-extra 
 
 #COPY scripts/shiny-server.conf /etc/shiny-server/shiny-server.conf
-
-WORKDIR /home/shiny-server
+WORKDIR /home/install
 COPY install_scripts ./install_scripts
 COPY scripts/ ./scripts
 
@@ -19,8 +18,10 @@ COPY scripts/ ./scripts
 RUN R -f install_scripts/install_packages.R 
 # install shinylive, quarto, etc.
 RUN install_scripts/install_packages.sh
+RUN git clone https://github.com/bit2r/bitWriting.git /home/shiny-server
+RUN ln -s /home/shiny-server/docker_bit-server/scripts /home/shiny-server/scripts
 
-RUN install_scripts/install_repository.sh
+WORKDIR /home/shiny-server
 
 
 # copy shiny-server config site: /home/app/shiny-server/apps
