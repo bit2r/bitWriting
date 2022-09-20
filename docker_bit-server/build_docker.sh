@@ -1,1 +1,1 @@
-docker build -t bit-server-local . -f Dockerfile 
+docker build -t joygram/bit-server . -f Dockerfile 
