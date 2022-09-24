@@ -6,4 +6,6 @@ cp ./shiny-server.conf /etc/shiny-server/shiny-server.conf
 # update r-packages 
 #R -f ./install_packages_additional.R
 
+R -e "renv::init()"
+
 /init 
