@@ -7,7 +7,7 @@ cp ./shiny-server.conf /etc/shiny-server/shiny-server.conf
 #R -f ./install_packages_additional.R
 
 # change renv global path by joygram 2022/09/25
-RENV_PATHS_ROOT=/home/shiny-server
+RENV_PATHS_ROOT=/home/shiny-server/share
 export RENV_PATHS_ROOT
 
 echo envroot[$RENV_PATHS_ROOT]
