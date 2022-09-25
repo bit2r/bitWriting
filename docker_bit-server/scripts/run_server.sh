@@ -10,8 +10,9 @@ cp ./shiny-server.conf /etc/shiny-server/shiny-server.conf
 RENV_PATHS_ROOT=/home/shiny-server
 export RENV_PATHS_ROOT
 
+echo envroot[$RENV_PATHS_ROOT]
 cd /home/shiny-server
-R -e "renv::restore(confirm=TRUE)"
+R -e "renv::restore()"
 R -e "renv::status()"
 
 
