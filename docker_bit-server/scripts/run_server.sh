@@ -12,7 +12,7 @@ export RENV_PATHS_CACHE
 
 echo envroot[$RENV_PATHS_CACHE]
 cd /home/shiny-server
-R -e "renv::restore(exclude = c(\"BitStat\"))"
+R -e "renv::init()"
 R -e "renv::status()"
 
 
